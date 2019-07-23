@@ -20,7 +20,26 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <widget class="QLabel" name="hour">
+      <property name="font">
+       <font>
+        <family>DejaVu Sans Mono</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <italic>true</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>hour</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
     <item>
      <widget class="QTabWidget" name="tab">
       <property name="font">
@@ -93,8 +112,8 @@
        <attribute name="title">
         <string>Week</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
-        <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
            <widget class="QDateEdit" name="Date">
@@ -105,11 +124,32 @@
               <italic>true</italic>
              </font>
             </property>
+            <property name="wrapping">
+             <bool>true</bool>
+            </property>
+            <property name="frame">
+             <bool>true</bool>
+            </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
             </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::UpDownArrows</enum>
+            </property>
+            <property name="accelerated">
+             <bool>true</bool>
+            </property>
             <property name="correctionMode">
              <enum>QAbstractSpinBox::CorrectToPreviousValue</enum>
+            </property>
+            <property name="keyboardTracking">
+             <bool>false</bool>
+            </property>
+            <property name="showGroupSeparator" stdset="0">
+             <bool>false</bool>
             </property>
             <property name="time">
              <time>
@@ -131,7 +171,7 @@
           </item>
          </layout>
         </item>
-        <item>
+        <item row="1" column="0">
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout">
@@ -336,7 +376,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
-             <widget class="QLabel" name="day1">
+             <widget class="QPushButton" name="day1">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -345,26 +385,19 @@
               </property>
               <property name="font">
                <font>
-                <family>DejaVu Serif</family>
-                <pointsize>20</pointsize>
+                <family>Caladea</family>
+                <pointsize>35</pointsize>
                 <weight>75</weight>
-                <italic>true</italic>
                 <bold>true</bold>
                </font>
               </property>
-              <property name="frameShape">
-               <enum>QFrame::Box</enum>
-              </property>
               <property name="text">
                <string/>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="day2">
+             <widget class="QPushButton" name="day2">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -373,26 +406,19 @@
               </property>
               <property name="font">
                <font>
-                <family>DejaVu Serif</family>
-                <pointsize>20</pointsize>
+                <family>Caladea</family>
+                <pointsize>35</pointsize>
                 <weight>75</weight>
-                <italic>true</italic>
                 <bold>true</bold>
                </font>
               </property>
-              <property name="frameShape">
-               <enum>QFrame::Box</enum>
-              </property>
               <property name="text">
                <string/>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="day3">
+             <widget class="QPushButton" name="day3">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -401,26 +427,19 @@
               </property>
               <property name="font">
                <font>
-                <family>DejaVu Serif</family>
-                <pointsize>20</pointsize>
+                <family>Caladea</family>
+                <pointsize>35</pointsize>
                 <weight>75</weight>
-                <italic>true</italic>
                 <bold>true</bold>
                </font>
               </property>
-              <property name="frameShape">
-               <enum>QFrame::Box</enum>
-              </property>
               <property name="text">
                <string/>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="day4">
+             <widget class="QPushButton" name="day4">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -429,26 +448,19 @@
               </property>
               <property name="font">
                <font>
-                <family>DejaVu Serif</family>
-                <pointsize>20</pointsize>
+                <family>Caladea</family>
+                <pointsize>35</pointsize>
                 <weight>75</weight>
-                <italic>true</italic>
                 <bold>true</bold>
                </font>
               </property>
-              <property name="frameShape">
-               <enum>QFrame::Box</enum>
-              </property>
               <property name="text">
                <string/>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="day5">
+             <widget class="QPushButton" name="day5">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -457,26 +469,19 @@
               </property>
               <property name="font">
                <font>
-                <family>DejaVu Serif</family>
-                <pointsize>20</pointsize>
+                <family>Caladea</family>
+                <pointsize>35</pointsize>
                 <weight>75</weight>
-                <italic>true</italic>
                 <bold>true</bold>
                </font>
               </property>
-              <property name="frameShape">
-               <enum>QFrame::Box</enum>
-              </property>
               <property name="text">
                <string/>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="day6">
+             <widget class="QPushButton" name="day6">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -485,26 +490,19 @@
               </property>
               <property name="font">
                <font>
-                <family>DejaVu Serif</family>
-                <pointsize>20</pointsize>
+                <family>Caladea</family>
+                <pointsize>35</pointsize>
                 <weight>75</weight>
-                <italic>true</italic>
                 <bold>true</bold>
                </font>
               </property>
-              <property name="frameShape">
-               <enum>QFrame::Box</enum>
-              </property>
               <property name="text">
                <string/>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="day7">
+             <widget class="QPushButton" name="day7">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -513,21 +511,14 @@
               </property>
               <property name="font">
                <font>
-                <family>DejaVu Serif</family>
-                <pointsize>20</pointsize>
+                <family>Caladea</family>
+                <pointsize>35</pointsize>
                 <weight>75</weight>
-                <italic>true</italic>
                 <bold>true</bold>
                </font>
               </property>
-              <property name="frameShape">
-               <enum>QFrame::Box</enum>
-              </property>
               <property name="text">
                <string/>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -541,129 +532,116 @@
        <attribute name="title">
         <string>Day</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_6">
-        <item>
-         <widget class="QDateEdit" name="Date2">
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="keyboardTracking">
-           <bool>false</bool>
-          </property>
-          <property name="displayFormat">
-           <string>dd MMMM yyyy</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_5">
-          <item>
-           <widget class="QLabel" name="day_of_week">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="font">
-             <font>
-              <family>DejaVu Sans Mono</family>
-              <pointsize>15</pointsize>
-              <weight>75</weight>
-              <italic>true</italic>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Box</enum>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="day">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="font">
-             <font>
-              <family>DejaVu Sans Mono</family>
-              <pointsize>35</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Box</enum>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_4">
-          <item>
-           <widget class="QPushButton" name="previous">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Maximum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>&lt;</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="my_date">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Box</enum>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="next">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Maximum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>&gt;</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>9</y>
+          <width>466</width>
+          <height>256</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QDateEdit" name="Date2">
+           <property name="wrapping">
+            <bool>true</bool>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="accelerated">
+            <bool>true</bool>
+           </property>
+           <property name="keyboardTracking">
+            <bool>false</bool>
+           </property>
+           <property name="displayFormat">
+            <string>dd MMMM yyyy</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <widget class="QLabel" name="day_of_week">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>DejaVu Sans Mono</family>
+                 <pointsize>15</pointsize>
+                 <weight>75</weight>
+                 <italic>true</italic>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Box</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="day">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>DejaVu Sans Mono</family>
+                 <pointsize>35</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Box</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>GroupBox</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4"/>
+         </item>
+        </layout>
+       </widget>
       </widget>
      </widget>
     </item>

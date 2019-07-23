@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <QDateEdit>
 #include <QPalette>
+#include <QTime>
 
 void MainWindow::week_setting()
 {
@@ -70,7 +71,14 @@ MainWindow::MainWindow(QWidget *parent) :
     QDate date = ui->calendarWidget->selectedDate();
     ui->Date->setDate(date);
     ui->Date2->setDate(date);
-    ui->my_date->setText(date.toString("dd MMMM yyyy"));
+
+    QString time_string = QTime::currentTime().toString("hh:mm:ss");
+    QString date_string = QDate::currentDate().toString("dd MMMM yyyy ");
+    ui->hour->setText(date_string + time_string);
+
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(timer_function()));
+    timer->start(1000);
 }
 
 MainWindow::~MainWindow()
@@ -89,7 +97,6 @@ void MainWindow::on_Date_userDateChanged(const QDate &date)
 {
     ui->calendarWidget->setSelectedDate(date);
     ui->Date2->setDate(date);
-    ui->my_date->setText(date.toString("dd MMMM yyyy"));
     week_setting();
 }
 
@@ -98,31 +105,99 @@ void MainWindow::on_Date2_userDateChanged(const QDate &date)
 {
     ui->calendarWidget->setSelectedDate(date);
     ui->Date->setDate(date);
-    ui->my_date->setText(date.toString("dd MMMM yyyy"));
     week_setting();
 
 }
 
-void MainWindow::on_previous_clicked()
+void MainWindow::timer_function()
 {
-    QDate date = ui->calendarWidget->selectedDate();
-    date = date.addDays(-1);
+    QTime timer = QTime::currentTime();
 
+    QString time_string = timer.toString("hh:mm:ss");
+    QString date_string = QDate::currentDate().toString("dd MMMM yyyy ");
+    ui->hour->setText(date_string + time_string);
+}
+
+void MainWindow::on_day1_clicked()
+{
+    QDate date = ui->Date->date();
+    int day_of_week = date.dayOfWeek();
+
+    date = date.addDays(1-day_of_week);
     ui->calendarWidget->setSelectedDate(date);
     ui->Date->setDate(date);
     ui->Date2->setDate(date);
-    ui->my_date->setText(date.toString("dd MMMM yyyy"));
     week_setting();
 }
 
-void MainWindow::on_next_clicked()
+void MainWindow::on_day2_clicked()
 {
-    QDate date = ui->calendarWidget->selectedDate();
-    date = date.addDays(1);
+    QDate date = ui->Date->date();
+    int day_of_week = date.dayOfWeek();
 
+    date = date.addDays(2-day_of_week);
     ui->calendarWidget->setSelectedDate(date);
     ui->Date->setDate(date);
     ui->Date2->setDate(date);
-    ui->my_date->setText(date.toString("dd MMMM yyyy"));
+    week_setting();
+}
+
+void MainWindow::on_day3_clicked()
+{
+    QDate date = ui->Date->date();
+    int day_of_week = date.dayOfWeek();
+
+    date = date.addDays(3-day_of_week);
+    ui->calendarWidget->setSelectedDate(date);
+    ui->Date->setDate(date);
+    ui->Date2->setDate(date);
+    week_setting();
+}
+
+void MainWindow::on_day4_clicked()
+{
+    QDate date = ui->Date->date();
+    int day_of_week = date.dayOfWeek();
+
+    date = date.addDays(4-day_of_week);
+    ui->calendarWidget->setSelectedDate(date);
+    ui->Date->setDate(date);
+    ui->Date2->setDate(date);
+    week_setting();
+}
+
+void MainWindow::on_day5_clicked()
+{
+    QDate date = ui->Date->date();
+    int day_of_week = date.dayOfWeek();
+
+    date = date.addDays(5-day_of_week);
+    ui->calendarWidget->setSelectedDate(date);
+    ui->Date->setDate(date);
+    ui->Date2->setDate(date);
+    week_setting();
+}
+
+void MainWindow::on_day6_clicked()
+{
+    QDate date = ui->Date->date();
+    int day_of_week = date.dayOfWeek();
+
+    date = date.addDays(6-day_of_week);
+    ui->calendarWidget->setSelectedDate(date);
+    ui->Date->setDate(date);
+    ui->Date2->setDate(date);
+    week_setting();
+}
+
+void MainWindow::on_day7_clicked()
+{
+    QDate date = ui->Date->date();
+    int day_of_week = date.dayOfWeek();
+
+    date = date.addDays(7-day_of_week);
+    ui->calendarWidget->setSelectedDate(date);
+    ui->Date->setDate(date);
+    ui->Date2->setDate(date);
     week_setting();
 }

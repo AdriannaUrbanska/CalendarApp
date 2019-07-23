@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
 
 namespace Ui {
 class MainWindow;
@@ -25,12 +26,25 @@ private slots:
 
     void on_Date2_userDateChanged(const QDate &date);
 
-    void on_previous_clicked();
+    void timer_function();
 
-    void on_next_clicked();
+    void on_day1_clicked();
+
+    void on_day2_clicked();
+
+    void on_day3_clicked();
+
+    void on_day4_clicked();
+
+    void on_day5_clicked();
+
+    void on_day6_clicked();
+
+    void on_day7_clicked();
 
 private:
     Ui::MainWindow *ui;
+    QTimer *timer;
 };
 
 #endif // MAINWINDOW_H
