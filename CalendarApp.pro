@@ -24,7 +24,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    month.cpp \
+    week.cpp \
+    day.cpp
 
 HEADERS  += mainwindow.h
 
