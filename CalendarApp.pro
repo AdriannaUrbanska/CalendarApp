@@ -32,3 +32,6 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    resource.qrc

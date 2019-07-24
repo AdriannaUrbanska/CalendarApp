@@ -532,7 +532,7 @@
        <attribute name="title">
         <string>Day</string>
        </attribute>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>9</x>
@@ -656,6 +656,32 @@
      <height>20</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionAdd_new_event"/>
+    <addaction name="actionTemp"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionPreferences"/>
+    <addaction name="actionView"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuOptions"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuAbout"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -664,10 +690,64 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionAdd_new_event"/>
+   <addaction name="actionExit"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAdd_new_event">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/rec/img/add_new_event.png</normaloff>:/rec/img/add_new_event.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add new event</string>
+   </property>
+  </action>
+  <action name="actionTemp">
+   <property name="text">
+    <string>temp</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/rec/img/exit.png</normaloff>:/rec/img/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionPreferences">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/rec/img/pref.png</normaloff>:/rec/img/pref.png</iconset>
+   </property>
+   <property name="text">
+    <string>Preferences</string>
+   </property>
+  </action>
+  <action name="actionView">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/rec/img/view.png</normaloff>:/rec/img/view.png</iconset>
+   </property>
+   <property name="text">
+    <string>View</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/rec/img/about.png</normaloff>:/rec/img/about.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

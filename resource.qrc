@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/rec">
+        <file>img/exit.png</file>
+        <file>img/add_new_event.png</file>
+        <file>img/view.png</file>
+        <file>img/about.png</file>
+        <file>img/pref.png</file>
+    </qresource>
+</RCC>

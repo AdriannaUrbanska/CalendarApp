@@ -7,6 +7,7 @@
 #include <QDateEdit>
 #include <QPalette>
 #include <QTime>
+#include <QMessageBox>
 
 void MainWindow::week_setting()
 {
@@ -93,4 +94,21 @@ void MainWindow::timer_function()
     QString time_string = timer.toString("hh:mm:ss");
     QString date_string = QDate::currentDate().toString("dd MMMM yyyy ");
     ui->hour->setText(date_string + time_string);
+}
+
+void MainWindow::on_actionExit_triggered()
+{
+    QMessageBox::StandardButton button;
+    button = QMessageBox::question(this, "Exit", "Are you sure?", QMessageBox::Yes | QMessageBox::No);
+
+    if (button == QMessageBox::Yes)
+        QApplication::quit();
+}
+
+void MainWindow::on_actionAbout_triggered()
+{
+    QMessageBox::about(this, "About",
+                       "Qt Calendar Application \n"
+                       "Author: Adrianna Urbańska \n"
+                       "Date: " + QDate::currentDate().toString("dd-MM-yyyy"));
 }
