@@ -39,12 +39,107 @@
      <property name="title">
       <string>Activity</string>
      </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="activity_label">
+            <property name="text">
+             <string>Kind of activity:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="start_label">
+            <property name="text">
+             <string>Start:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="end_label">
+            <property name="text">
+             <string>End:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QComboBox" name="kind_of_activity">
+            <item>
+             <property name="text">
+              <string>Work</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Sport</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Study</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateTimeEdit" name="start">
+            <property name="wrapping">
+             <bool>false</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="accelerated">
+             <bool>true</bool>
+            </property>
+            <property name="displayFormat">
+             <string>h:mm dd-MM-yyyy</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateTimeEdit" name="end">
+            <property name="wrapping">
+             <bool>false</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="accelerated">
+             <bool>true</bool>
+            </property>
+            <property name="displayFormat">
+             <string>h:mm dd-MM-yyyy</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="save_day">
+    <widget class="QPushButton" name="add">
      <property name="text">
-      <string>Save activity</string>
+      <string>Add Event</string>
      </property>
     </widget>
    </item>

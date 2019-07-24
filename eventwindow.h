@@ -18,6 +18,10 @@ public:
 private slots:
     void on_Date_event_userDateChanged(const QDate &date);
 
+    void on_add_clicked();
+
+    void on_start_dateTimeChanged(const QDateTime &dateTime);
+
 private:
     Ui::EventWindow *ui;
 };
