@@ -19,7 +19,7 @@ public:
 
 private slots:
 
-    void week_setting();
+    void week_setting(const QDate &date);
 
     void on_calendarWidget_clicked(const QDate &date);
 
@@ -47,7 +47,9 @@ private slots:
 
     void on_actionAbout_triggered();
 
-    void double_click(const QDate &date);
+    void add_event(const QDate &date);
+
+    void on_actionAdd_new_event_triggered();
 
 private:
     Ui::MainWindow *ui;

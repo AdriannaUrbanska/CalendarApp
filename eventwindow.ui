@@ -15,12 +15,36 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>Hello World</string>
+    <widget class="QDateEdit" name="Date_event">
+     <property name="font">
+      <font>
+       <family>DejaVu Sans Mono</family>
+       <pointsize>13</pointsize>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="wrapping">
+      <bool>true</bool>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+     <property name="displayFormat">
+      <string>dd MMMM yyyy</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="activity">
+     <property name="title">
+      <string>Activity</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="save_day">
+     <property name="text">
+      <string>Save activity</string>
      </property>
     </widget>
    </item>

@@ -11,15 +11,14 @@
 #include <QWidget>
 #include <QMouseEvent>
 
-void MainWindow::week_setting()
+void MainWindow::week_setting(const QDate &date1)
 {
-    QDate date = ui->calendarWidget->selectedDate();
-    int day_number = date.dayOfWeek();
+    int day_number = date1.dayOfWeek();
 
-    ui->day->setText(date.toString("dd"));
-    ui->day_of_week->setText(date.toString("dddd"));
+    ui->day->setText(date1.toString("dd"));
+    ui->day_of_week->setText(date1.toString("dddd"));
 
-    date = date.addDays(1-day_number);
+    QDate date = date1.addDays(1-day_number);
 
     ui->day1->setText(date.toString("dd"));
     ui->day2->setText(date.addDays(1).toString("dd"));
@@ -70,7 +69,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     QDate date = QDate::currentDate();
 
-    week_setting();
+    week_setting(date);
     setWindowTitle("CalendarApp " + date.toString("dd-MM-yyyy"));
     ui->tab->setCurrentIndex(0);
 
@@ -85,7 +84,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(timer, SIGNAL(timeout()), this, SLOT(timer_function()));
     timer->start(1000);
 
-    connect(ui->calendarWidget, SIGNAL(activated(QDate)), this, SLOT(double_click(QDate)));
+    connect(ui->calendarWidget, SIGNAL(activated(QDate)), this, SLOT(add_event(QDate)));
 }
 
 MainWindow::~MainWindow()
@@ -119,10 +118,15 @@ void MainWindow::on_actionAbout_triggered()
                        "Date: " + QDate::currentDate().toString("dd-MM-yyyy"));
 }
 
-void MainWindow::double_click(const QDate &date)
+void MainWindow::add_event(const QDate &date)
 {
-    setWindowTitle("CalendarApp " + date.toString("dd-MM-yyyy"));
     event_window = new EventWindow(this);
     event_window->show();
 }
 
+
+void MainWindow::on_actionAdd_new_event_triggered()
+{
+    QDate date = ui->calendarWidget->selectedDate();
+    add_event(date);
+}

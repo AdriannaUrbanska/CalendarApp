@@ -10,7 +10,8 @@
 
 void MainWindow::on_Date2_userDateChanged(const QDate &date)
 {
+    setWindowTitle("CalendarApp " + date.toString("dd-MM-yyyy"));
     ui->calendarWidget->setSelectedDate(date);
     ui->Date->setDate(date);
-    week_setting();
+    week_setting(date);
 }

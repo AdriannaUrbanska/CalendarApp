@@ -2,7 +2,6 @@
 #define EVENTWINDOW_H
 
 #include <QDialog>
-#include "mainwindow.h"
 
 namespace Ui {
 class EventWindow;
@@ -15,6 +14,9 @@ class EventWindow : public QDialog
 public:
     explicit EventWindow(QWidget *parent = 0);
     ~EventWindow();
+
+private slots:
+    void on_Date_event_userDateChanged(const QDate &date);
 
 private:
     Ui::EventWindow *ui;
