@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
+#include "eventwindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -46,9 +47,13 @@ private slots:
 
     void on_actionAbout_triggered();
 
+    void double_click(const QDate &date);
+
 private:
     Ui::MainWindow *ui;
     QTimer *timer;
+    EventWindow *event_window;
+
 };
 
 #endif // MAINWINDOW_H

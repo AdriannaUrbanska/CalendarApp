@@ -8,6 +8,8 @@
 #include <QPalette>
 #include <QTime>
 #include <QMessageBox>
+#include <QWidget>
+#include <QMouseEvent>
 
 void MainWindow::week_setting()
 {
@@ -66,10 +68,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QDate date = QDate::currentDate();
 
     week_setting();
+    setWindowTitle("CalendarApp " + date.toString("dd-MM-yyyy"));
     ui->tab->setCurrentIndex(0);
-    QDate date = ui->calendarWidget->selectedDate();
+
     ui->Date->setDate(date);
     ui->Date2->setDate(date);
 
@@ -80,6 +84,8 @@ MainWindow::MainWindow(QWidget *parent) :
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(timer_function()));
     timer->start(1000);
+
+    connect(ui->calendarWidget, SIGNAL(activated(QDate)), this, SLOT(double_click(QDate)));
 }
 
 MainWindow::~MainWindow()
@@ -112,3 +118,11 @@ void MainWindow::on_actionAbout_triggered()
                        "Author: Adrianna Urbańska \n"
                        "Date: " + QDate::currentDate().toString("dd-MM-yyyy"));
 }
+
+void MainWindow::double_click(const QDate &date)
+{
+    setWindowTitle("CalendarApp " + date.toString("dd-MM-yyyy"));
+    event_window = new EventWindow(this);
+    event_window->show();
+}
+

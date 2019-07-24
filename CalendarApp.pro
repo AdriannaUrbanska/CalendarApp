@@ -27,11 +27,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     month.cpp \
     week.cpp \
-    day.cpp
+    day.cpp \
+    eventwindow.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    eventwindow.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    eventwindow.ui
 
 RESOURCES += \
     resource.qrc
