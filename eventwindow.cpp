@@ -6,6 +6,7 @@
 #include <QDateTimeEdit>
 #include <QDateTime>
 #include <QTime>
+#include <QDebug>
 
 
 EventWindow::EventWindow(QWidget *parent) :
@@ -62,3 +63,9 @@ void EventWindow::on_start_dateTimeChanged(const QDateTime &dateTime)
     ui->Date_event->setDate(dateTime.date());
 }
 
+
+void EventWindow::on_add_new_clicked()
+{
+    add_window = new AddWindow(this);
+    add_window->show();
+}

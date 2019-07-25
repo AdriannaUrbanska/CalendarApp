@@ -39,11 +39,11 @@
      <property name="title">
       <string>Activity</string>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="QLabel" name="activity_label">
             <property name="text">
@@ -55,6 +55,49 @@
            </widget>
           </item>
           <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QComboBox" name="kind_of_activity">
+              <item>
+               <property name="text">
+                <string>Work</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Sport</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Study</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Other</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="add_new">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resource.qrc">
+                <normaloff>:/rec/img/add_new.png</normaloff>:/rec/img/add_new.png</iconset>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
            <widget class="QLabel" name="start_label">
             <property name="text">
              <string>Start:</string>
@@ -62,39 +105,6 @@
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="end_label">
-            <property name="text">
-             <string>End:</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <item>
-           <widget class="QComboBox" name="kind_of_activity">
-            <item>
-             <property name="text">
-              <string>Work</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Sport</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Study</string>
-             </property>
-            </item>
            </widget>
           </item>
           <item>
@@ -110,6 +120,20 @@
             </property>
             <property name="displayFormat">
              <string>h:mm dd-MM-yyyy</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="end_label">
+            <property name="text">
+             <string>End:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
            </widget>
           </item>
@@ -134,6 +158,8 @@
        </layout>
       </item>
      </layout>
+     <zorder>add_new</zorder>
+     <zorder>start</zorder>
     </widget>
    </item>
    <item>
@@ -145,6 +171,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -2,6 +2,7 @@
 #define EVENTWINDOW_H
 
 #include <QDialog>
+#include "addwindow.h"
 
 namespace Ui {
 class EventWindow;
@@ -22,8 +23,11 @@ private slots:
 
     void on_start_dateTimeChanged(const QDateTime &dateTime);
 
+    void on_add_new_clicked();
+
 private:
     Ui::EventWindow *ui;
+    AddWindow *add_window;
 };
 
 #endif // EVENTWINDOW_H

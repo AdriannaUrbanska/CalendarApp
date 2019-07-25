@@ -55,7 +55,6 @@ private:
     Ui::MainWindow *ui;
     QTimer *timer;
     EventWindow *event_window;
-
 };
 
 #endif // MAINWINDOW_H
