@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTimer>
 #include "eventwindow.h"
+#include "activities.h"
 
 namespace Ui {
 class MainWindow;
@@ -51,10 +52,13 @@ private slots:
 
     void on_actionAdd_new_event_triggered();
 
+    void on_actionActivities_triggered();
+
 private:
     Ui::MainWindow *ui;
     QTimer *timer;
     EventWindow *event_window;
+    Activities *activities;
 };
 
 #endif // MAINWINDOW_H

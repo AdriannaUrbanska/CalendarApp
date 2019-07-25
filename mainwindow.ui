@@ -672,6 +672,7 @@
     </property>
     <addaction name="actionPreferences"/>
     <addaction name="actionView"/>
+    <addaction name="actionActivities"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -742,6 +743,15 @@
    </property>
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionActivities">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/rec/img/activities.png</normaloff>:/rec/img/activities.png</iconset>
+   </property>
+   <property name="text">
+    <string>Activities</string>
    </property>
   </action>
  </widget>

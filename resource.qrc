@@ -6,5 +6,6 @@
         <file>img/about.png</file>
         <file>img/pref.png</file>
         <file>img/add_new.png</file>
+        <file>img/activities.png</file>
     </qresource>
 </RCC>

@@ -57,28 +57,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
-             <widget class="QComboBox" name="kind_of_activity">
-              <item>
-               <property name="text">
-                <string>Work</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Sport</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Study</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Other</string>
-               </property>
-              </item>
-             </widget>
+             <widget class="QComboBox" name="kind_of_activity"/>
             </item>
             <item>
              <widget class="QToolButton" name="add_new">

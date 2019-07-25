@@ -7,7 +7,8 @@
 #include <QDateTime>
 #include <QTime>
 #include <QDebug>
-
+#include <QDialog>
+#include <QObject>
 
 EventWindow::EventWindow(QWidget *parent) :
     QDialog(parent),
@@ -23,12 +24,15 @@ EventWindow::EventWindow(QWidget *parent) :
     QDateTime datetime;
     QTime time(0,0);
 
+
     datetime.setDate(date);
     datetime.setTime(time);
     ui->start->setDateTime(datetime);
     ui->end->setDateTime(datetime);
 
     connect(ui->Date_event, SIGNAL(userDateChanged(QDate)), parent, SLOT(week_setting(QDate)));
+
+    //ui->kind_of_activity->addItems();
 }
 
 EventWindow::~EventWindow()
@@ -61,6 +65,15 @@ void EventWindow::on_start_dateTimeChanged(const QDateTime &dateTime)
     ui->end->setMinimumDateTime(dateTime);
 
     ui->Date_event->setDate(dateTime.date());
+
+    QDate date = dateTime.date();
+    QCalendarWidget *calendar = parent()->findChild<QCalendarWidget *>("calendarWidget");
+    QDateEdit *Date = parent()->findChild<QDateEdit *>("Date");
+    QDateEdit *Date2 = parent()->findChild<QDateEdit *>("Date2");
+
+    calendar->setSelectedDate(date);
+    Date->setDate(date);
+    Date2->setDate(date);
 }
 
 

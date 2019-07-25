@@ -29,15 +29,18 @@ SOURCES += main.cpp\
     week.cpp \
     day.cpp \
     eventwindow.cpp \
-    addwindow.cpp
+    addwindow.cpp \
+    activities.cpp
 
 HEADERS  += mainwindow.h \
     eventwindow.h \
-    addwindow.h
+    addwindow.h \
+    activities.h
 
 FORMS    += mainwindow.ui \
     eventwindow.ui \
-    addwindow.ui
+    addwindow.ui \
+    activities.ui
 
 RESOURCES += \
     resource.qrc

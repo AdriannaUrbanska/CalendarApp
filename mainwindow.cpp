@@ -10,6 +10,8 @@
 #include <QMessageBox>
 #include <QWidget>
 #include <QMouseEvent>
+#include <QComboBox>
+#include <QListWidget>
 
 void MainWindow::week_setting(const QDate &date1)
 {
@@ -85,6 +87,7 @@ MainWindow::MainWindow(QWidget *parent) :
     timer->start(1000);
 
     connect(ui->calendarWidget, SIGNAL(activated(QDate)), this, SLOT(add_event(QDate)));
+    activities = new Activities(this);
 }
 
 MainWindow::~MainWindow()
@@ -121,6 +124,14 @@ void MainWindow::on_actionAbout_triggered()
 void MainWindow::add_event(const QDate &date)
 {
     event_window = new EventWindow(this);
+
+    QComboBox *combo = event_window->findChild<QComboBox *>("kind_of_activity");
+    QListWidget *list = activities->findChild<QListWidget *>("list");
+    const int count = list->count();
+
+    for (int i = 0; i<count; i++)
+        combo->addItem(list->item(i)->text());
+
     event_window->show();
 }
 
@@ -129,4 +140,9 @@ void MainWindow::on_actionAdd_new_event_triggered()
 {
     QDate date = ui->calendarWidget->selectedDate();
     add_event(date);
+}
+
+void MainWindow::on_actionActivities_triggered()
+{
+    activities->show();
 }
