@@ -46,6 +46,7 @@ void EventWindow::on_Date_event_userDateChanged(const QDate &date)
     QCalendarWidget *calendar = parent()->findChild<QCalendarWidget *>("calendarWidget");
     QDateEdit *Date = parent()->findChild<QDateEdit *>("Date");
     QDateEdit *Date2 = parent()->findChild<QDateEdit *>("Date2");
+    ui->start->setDate(date);
 
     calendar->setSelectedDate(date);
     Date->setDate(date);
@@ -74,11 +75,4 @@ void EventWindow::on_start_dateTimeChanged(const QDateTime &dateTime)
     calendar->setSelectedDate(date);
     Date->setDate(date);
     Date2->setDate(date);
-}
-
-
-void EventWindow::on_add_new_clicked()
-{
-    add_window = new AddWindow(this);
-    add_window->show();
 }

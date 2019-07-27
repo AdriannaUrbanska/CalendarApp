@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>340</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,6 +21,32 @@
      <width>256</width>
      <height>192</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="add_new">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>285</y>
+     <width>82</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add new</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="delete_">
+   <property name="geometry">
+    <rect>
+     <x>51</x>
+     <y>285</y>
+     <width>166</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete selected item</string>
    </property>
   </widget>
  </widget>

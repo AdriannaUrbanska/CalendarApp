@@ -1,6 +1,5 @@
 #include "addwindow.h"
 #include "ui_addwindow.h"
-#include <QComboBox>
 #include <QTextEdit>
 #include <QListWidget>
 #include <QDebug>
@@ -21,11 +20,8 @@ AddWindow::~AddWindow()
 
 void AddWindow::on_add_activity_button_clicked()
 {
-    QComboBox *combo = parent()->findChild<QComboBox *>("kind_of_activity");
-    combo->addItem(ui->name->toPlainText());
-
-   //if(ui->add_to_all->isChecked())
-        //list->addItem(ui->name->toPlainText());
+    QListWidget *list = parent()->findChild<QListWidget *>("list");
+    list->addItem(ui->name->toPlainText());
 
     close();
 }

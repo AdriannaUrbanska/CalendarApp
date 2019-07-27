@@ -88,6 +88,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->calendarWidget, SIGNAL(activated(QDate)), this, SLOT(add_event(QDate)));
     activities = new Activities(this);
+
 }
 
 MainWindow::~MainWindow()
