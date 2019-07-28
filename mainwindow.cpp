@@ -147,3 +147,13 @@ void MainWindow::on_actionActivities_triggered()
 {
     activities->show();
 }
+
+void MainWindow::on_today_clicked()
+{
+    QDate date = QDate::currentDate();
+    setWindowTitle("CalendarApp " + date.toString("dd-MM-yyyy"));
+    ui->calendarWidget->setSelectedDate(date);
+    ui->Date->setDate(date);
+    ui->Date2->setDate(date);
+    week_setting(date);
+}

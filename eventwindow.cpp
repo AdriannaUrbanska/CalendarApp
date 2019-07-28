@@ -9,6 +9,8 @@
 #include <QDebug>
 #include <QDialog>
 #include <QObject>
+#include <QTableWidget>
+#include <QTableWidgetItem>
 
 EventWindow::EventWindow(QWidget *parent) :
     QDialog(parent),
@@ -32,7 +34,7 @@ EventWindow::EventWindow(QWidget *parent) :
 
     connect(ui->Date_event, SIGNAL(userDateChanged(QDate)), parent, SLOT(week_setting(QDate)));
 
-    //ui->kind_of_activity->addItems();
+    ui->all_day->setChecked(false);
 }
 
 EventWindow::~EventWindow()
@@ -55,6 +57,10 @@ void EventWindow::on_Date_event_userDateChanged(const QDate &date)
 
 void EventWindow::on_add_clicked()
 {
+    QTableWidget *table = parent()->findChild<QTableWidget *>("hour_list");
+    QDate start = ui->start->date();
+    QDate end = ui->end->date();
+
     close();
 }
 
@@ -75,4 +81,24 @@ void EventWindow::on_start_dateTimeChanged(const QDateTime &dateTime)
     calendar->setSelectedDate(date);
     Date->setDate(date);
     Date2->setDate(date);
+
+    if(ui->all_day->isChecked())
+        ui->end->setDate(date);
+
+}
+
+void EventWindow::on_all_day_clicked()
+{
+    if(ui->all_day->isChecked())
+    {
+        ui->start->setDisplayFormat("dd-MM-yyyy");
+        ui->end->setEnabled(false);
+        ui->end->setDisplayFormat("dd-MM-yyyy");
+    }
+    else
+    {
+        ui->start->setDisplayFormat("h:mm dd-MM-yyyy");
+        ui->end->setEnabled(true);
+        ui->end->setDisplayFormat("h:mm dd-MM-yyyy");
+    }
 }

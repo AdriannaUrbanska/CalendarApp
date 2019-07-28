@@ -54,6 +54,8 @@ private slots:
 
     void on_actionActivities_triggered();
 
+    void on_today_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTimer *timer;

@@ -41,6 +41,19 @@
      </widget>
     </item>
     <item>
+     <widget class="QPushButton" name="today">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Today</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QTabWidget" name="tab">
       <property name="font">
        <font>
@@ -557,7 +570,7 @@
          <string>dd MMMM yyyy</string>
         </property>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -635,7 +648,7 @@
             </sizepolicy>
            </property>
            <property name="title">
-            <string>GroupBox</string>
+            <string>Day schedule</string>
            </property>
            <widget class="QTableWidget" name="hour_list">
             <property name="geometry">

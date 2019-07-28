@@ -22,6 +22,8 @@ private slots:
 
     void on_start_dateTimeChanged(const QDateTime &dateTime);
 
+    void on_all_day_clicked();
+
 private:
     Ui::EventWindow *ui;
 };
